@@ -7,19 +7,30 @@
 </head>
 <body>
 
-<header class="site-header contenedor">
-    <div class="logo">
-        <a href="<?php echo esc_url( home_url('/')); ?>">
-            <img src="<?php echo get_template_directory_uri()?>/img/logo.svg" alt="logo">
-        </a>
-    </div>
-    <div class="informacio-header">
-        <div class="redes-sociales">
-            <!-- Agregar redes sociales -->
+<header class="site-header">
+    <div class="contenedor">
+        <div class="logo">
+            <a href="<?php echo esc_url( home_url('/')); ?>">
+                <img src="<?php echo get_template_directory_uri()?>/img/logo.svg" alt="logo">
+            </a>
         </div>
-        <div class="direccion">
-            <p>Aquí va la deirección, del sitio web</p>
-            <p>Teléfono: 09450293480</p>
+        <div class="informacio-header">
+            <div class="redes-sociales">
+                <?php
+                    $args   =   array(
+                        'theme_location'    =>  'redes-sociales',
+                        'container'         =>  'nav',
+                        'container_class'   =>  'sociales',
+                        'link_before'       =>  '<span class="sr-text">',
+                        'link_after'        =>  '</span>'
+                    );
+                    wp_nav_menu( $args );
+                ?>
+            </div>
+            <div class="direccion">
+                <p>Aquí va la deirección, del sitio web</p>
+                <p>Teléfono: 09450293480</p>
+            </div>
         </div>
     </div>
 </header>

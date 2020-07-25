@@ -17,7 +17,8 @@ add_action('wp_enqueue_scripts', 'sitio_estilos');
 // Menus
 function sitio_menus() {
     register_nav_menus(array(
-        'header-menu'   =>  'Header Menú'
+        'header-menu'       =>  'Header Menú',
+        'redes-sociales'    =>  'Redes Sociales'
     ));
 }
 add_action('init', 'sitio_menus');
