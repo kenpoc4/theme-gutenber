@@ -34,3 +34,23 @@ function sitio_menus() {
     ));
 }
 add_action('init', 'sitio_menus');
+
+// Zonas de Widgets
+function sitio_witgets() {
+    register_sidebar( array(
+        'name'          =>  'Blog Sidebar',
+        'id'            =>  'blog_sidebar',
+        'before_widget' =>  '<div class="widget">',
+        'after_widget'  =>  '</div>',
+        'before_title'  =>  '<h3>',
+        'after_widget'  =>  '</h3>'
+    ) );
+}
+add_action('widgets_init', 'sitio_witgets');
+
+// Agregar botones a paginador
+function sitio_botones_paginador() {
+    return 'class="boton boton-secundario"';
+}
+add_filter( 'next_posts_link_attributes', 'sitio_botones_paginador' );
+add_filter( 'previous_posts_link_attributes', 'sitio_botones_paginador' );
